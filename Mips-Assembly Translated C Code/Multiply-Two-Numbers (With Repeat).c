@@ -3,7 +3,7 @@ int number= 0, factor= 0, result= 0, current_iteration= 0, repeat= 1;
 int main(void) {
 	printf("Enter a number:\n");
 	scanf("%d", &number);
-	printf("\n\Enter a multiplying factor:\n");
+	printf("\nEnter a multiplying factor:\n");
 	scanf("%d", &factor);
 	
 	while (current_iteration < factor) {
