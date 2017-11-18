@@ -65,7 +65,6 @@
 		move $a0 $t2
 		syscall
 		
-		# HANDLE REPEAT
 		li $v0 4 # printf("%s", ask_repeat);
 		la $a0 ask_repeat
 		syscall

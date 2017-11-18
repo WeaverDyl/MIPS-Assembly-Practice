@@ -1,3 +1,5 @@
+#include <stdio.h>
+
 int x, y, sum= 0;
 
 int main(void) {

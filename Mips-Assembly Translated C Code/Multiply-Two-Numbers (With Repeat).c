@@ -1,3 +1,5 @@
+#include <stdio.h>
+
 int number= 0, factor= 0, result= 0, current_iteration= 0, repeat= 1;
 
 int main(void) {
