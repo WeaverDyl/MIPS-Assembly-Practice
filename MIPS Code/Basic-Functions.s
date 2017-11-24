@@ -62,7 +62,7 @@
 		lw $ra 8($sp) # restore the old frame pointer
 		lw $fp 4($sp) # restore the old frame pointer
 		add $sp $sp 8 # increment the stack pointer
-		jr $ra		  # return to the return address (caller)
+		jr $ra	      # return to the return address (caller)
 		
 	dec_y:
 		#prologue
@@ -86,7 +86,7 @@
 		lw $ra 8($sp) # restore the old frame pointer
 		lw $fp 4($sp) # restore the old frame pointer
 		add $sp $sp 8 # increment the stack pointer
-		jr $ra		  # return to the return address (caller)
+		jr $ra	      # return to the return address (caller)
 		
 		
 		
