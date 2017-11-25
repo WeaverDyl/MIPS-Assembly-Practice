@@ -17,7 +17,7 @@
 		
 		move $t0 $v0 # Move the returned value into $t0
 		
-		li $v0 1 # printf("%d", result);
+		li $v0 1 # printf("%d", result); (Result of add(3))
 		move $a0 $t0 
 		syscall
 		
@@ -37,11 +37,11 @@
 		
 		move $t1 $v0 # Move the returned value into $t1
 		
-		li $v0 1
+		li $v0 1 # printf("%d", result); (result of multiply(20))
 		move $a0 $t1
 		syscall
 		
-		li $v0 11
+		li $v0 11 printf("\n");
 		li $a0 '\n'
 		syscall
 		
@@ -81,8 +81,8 @@
 		
 		move $v0 $t0 # Move the value into $t0 so we can return it
 		
-		lw $ra 8($sp)
-		lw $fp 4($sp)
-		add $sp $sp 8
-		jr $ra
+		lw $ra 8($sp) # Restore the return addess
+		lw $fp 4($sp) # Return the frame pointer
+		add $sp $sp 8 # Increment the stack
+		jr $ra # Jump back to the calling function (main, in this case)
 	
