@@ -41,7 +41,7 @@
 		move $a0 $t1
 		syscall
 		
-		li $v0 11 printf("\n");
+		li $v0 11 # printf("\n");
 		li $a0 '\n'
 		syscall
 		
