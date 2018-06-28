@@ -21,35 +21,35 @@
 		lw $t3 current_iteration
 		lw $t4 repeat
 		
-		li $t0 0 # Handles resetting the variables in case the user repeats
+		li $t0 0 			# Handles resetting the variables in case the user repeats
 		li $t1 0
 		li $t2 0
 		li $t3 0
 		li $t4 1
 	
-		li $v0 4 # printf("%s", ask_number_begin);
+		li $v0 4 			# printf("%s", ask_number_begin);
 		la $a0 ask_number_begin
 		syscall
 		
-		li $v0 5 # scanf("%d", number);
+		li $v0 5 			# scanf("%d", number);
 		syscall
 		move $t0 $v0
 		
-		li $v0 4 # printf("%s", ask_factor);
+		li $v0 4 			# printf("%s", ask_factor);
 		la $a0 ask_factor
 		syscall
 		
-		li $v0 5 # scanf("%d", factor);
+		li $v0 5 			# scanf("%d", factor);
 		syscall
 		move $t1 $v0
 		
-		sw $t0 number # Store the two numbers
+		sw $t0 number 			# Store the two numbers
 		sw $t1 factor
 		
 	loop:
-		beq $t1 $t3 end_loop # if (factor == current_iteration) goto end_loop
-		add $t2 $t2 $t0 # result += number
-		add $t3 $t3 1 # current_iteration += 1
+		beq $t1 $t3 end_loop 		# if (factor == current_iteration) goto end_loop
+		add $t2 $t2 $t0 		# result += number
+		add $t3 $t3 1 			# current_iteration += 1
 		
 		sw $t2 result
 		sw $t3 current_iteration
@@ -57,23 +57,23 @@
 		j loop
 		
 	end_loop:
-		li $v0 4 # printf("%s", result_string);
+		li $v0 4 			# printf("%s", result_string);
 		la $a0 result_string
 		syscall
 		
-		li $v0 1 # printf("%d", result)
+		li $v0 1 			# printf("%d", result)
 		move $a0 $t2
 		syscall
 		
-		li $v0 4 # printf("%s", ask_repeat);
+		li $v0 4 			# printf("%s", ask_repeat);
 		la $a0 ask_repeat
 		syscall
 		
-		li $v0 5 # scanf("%d", repeat);
+		li $v0 5 			# scanf("%d", repeat);
 		syscall
 		move $t4 $v0
 		
-		beqz $t4 main # if (repeat == 0) goto main
+		beqz $t4 main 			# if (repeat == 0) goto main
 		
 		li $v0 10
 		syscall
